@@ -1,0 +1,139 @@
+@use "../abstracts" as a;
+
+/*--==================== CONTACT ME ====================--*/
+
+.contact {
+  &__container {
+    &--contents {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      padding: 3.5rem 0;
+      &_left {
+        flex: 2.5;
+        &-title {
+          margin-top: 1rem;
+          font-size: 2rem;
+          text-transform: uppercase;
+          color: var(--first-color);
+        }
+
+        &-subtitle {
+          margin: 1rem 0;
+          line-height: 1.8;
+        }
+        .contact__info--item {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: center;
+          justify-content: space-between;
+          margin: 1rem 0;
+          &_detail {
+            margin: 0.3rem 0 !important;
+            padding: 0 !important;
+          }
+          &_icon {
+            display: grid;
+            grid-template-columns: 20px 1fr;
+            align-items: center;
+            & i {
+              font-size: 1.2rem;
+              color: var(--first-color);
+            }
+          }
+        }
+        &-icons {
+          .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            a {
+              background-color: var(--first-color-lighter);
+              color: var(--container-color);
+              padding: 0.5rem;
+              border-radius: 100%;
+              width: 30px;
+              height: 30px;
+              display: grid;
+              place-items: center;
+              i{
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+      &_right {
+        flex: 3;
+        margin-left: 0rem;
+        .form-input {
+          margin: 1.5rem 0;
+          input,
+          textarea {
+            border-radius: 30px;
+            font-weight: inherit;
+            font-size: inherit;
+            font-family: inherit;
+            padding: 0.8rem 1.1rem;
+            outline: none;
+            border: none;
+            width: 100%;
+            color: var(--text-color-lighter);
+            background-color: var(--first-color-lighter);
+            resize: none;
+          }
+          textarea {
+            border-radius: 10px;
+          }
+        }
+        .input {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .form-submit {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &-btn {
+            color: var(--text-color-lighter);
+            background-color: var(--first-color-lighter);
+            padding: 0.8rem 3rem;
+            outline: none;
+            border: none;
+            border-radius: 30px;
+            font-weight: var(--font-semi-bold);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+
+@media screen and (min-width: 576px) {
+}
+@media screen and (min-width: 768px) {
+  .contact__container--contents {
+    flex-direction: row;
+    gap: 0;
+    padding: 3.5rem;
+    &_right {
+      margin-left: 3rem;
+    }
+    .input {
+      display: flex;
+      flex-direction: row;
+      gap: 0;
+      :last-child {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: 968px) {
+}
+@media screen and (min-width: 1200px) {
+}

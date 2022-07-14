@@ -1,0 +1,171 @@
+@use "../abstracts" as a;
+
+/*--==================== MY PORTFOLIO SECTION ====================--*/
+.portfolio {
+  &__container {
+    &--header {
+      text-align: center;
+      padding: 2rem 0;
+      line-height: 1.5;
+    }
+    &--contents {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      position: relative;
+      padding: 3.5rem 0;
+      .portfolio__item {
+        position: relative;
+        cursor: pointer;
+        &--image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+        &--overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1.5rem;
+          background-color: var(--first-color-lighter);
+          text-align: center;
+          border-radius: 10px;
+          opacity: 0;
+          transform: scale(0);
+          transition: all 0.4s ease-in-out;
+          h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+          }
+          &_links {
+            display: flex;
+            gap: 1rem;
+            .social-link {
+              background-color: #fff;
+              border-radius: 50px;
+              padding: 0.5rem;
+              &:hover {
+                background-color: var(--first-color);
+                i {
+                  color: #fff;
+                }
+              }
+            }
+            .social-icon {
+              font-size: 1.5rem;
+              color: var(--first-color);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Portfolio Preview Styles //
+
+  .portfolio__container--previews {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: var(--z-modal);
+
+    .portfolio__itemPreview {
+      display: none;
+      padding: 2rem;
+      background: #fff;
+      position: relative;
+      margin: 2rem;
+      width: 25rem;
+      border-radius: 10px;
+      animation-duration: 0.4s;
+      animation-name: animate;
+    }
+    .portfolio__itemPreview.active {
+      display: inline-block;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: scale(1, 1);
+      }
+
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      margin-bottom: var(--mb-4);
+      i {
+        font-size: 1.5rem;
+      }
+    }
+
+    .preview__summary--header {
+      text-align: center;
+      padding: 2rem 0;
+      line-height: 1.5;
+      font-size: 1.5rem;
+    }
+
+    .preview__summary--photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .preview__summary--desc {
+      margin-top: 1.5rem;
+      p {
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.portfolio__item:hover .portfolio__item--overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+// Media Queries
+
+@media screen and (min-width: 576px) {
+}
+@media screen and (min-width: 768px) {
+  .portfolio__container--contents {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3.5rem;
+  }
+}
+@media screen and (min-width: 968px) {
+}
+@media screen and (min-width: 1200px) {
+}

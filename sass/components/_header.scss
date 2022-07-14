@@ -1,0 +1,12 @@
+/********* This is for Header ***********/
+@use "../abstracts" as a;
+  /* ========== HEADER =========== */
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+  //  background-image: linear-gradient(135deg,#F5F7FA 0%,#C3CFE2 100%);
+    transition: .3s;
+  }

@@ -1,0 +1,126 @@
+@use "../abstracts" as a;
+
+/*--==================== MY RESUME SECTION ====================--*/
+.resume {
+  &__container {
+    &--header {
+      text-align: center;
+      padding: 2rem 0;
+      line-height: 1.5;
+    }
+
+    &--contents {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3.5rem 0;
+      &_resume {
+        .resume__header {
+          width: 100%;
+          margin-bottom: 2rem;
+          .resume-title {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            color: var(--first-color);
+          }
+
+          .resume-subtitle {
+            font-size: 1.1rem;
+          }
+        }
+        .resume__body {
+          &--item {
+            display: flex;
+            margin-bottom: 1rem;
+            .pattern {
+              margin: 0 1rem 0 0.4rem;
+            }
+            .rounder {
+              position: relative;
+              display: block;
+              width: 10px;
+              height: 10px;
+              margin-top: 0.3rem;
+              background-color: var(--first-color);
+              border-radius: 50%;
+            }
+
+            .line {
+              display: block;
+              width: 1px;
+              height: 110%;
+              background-color: var(--text-color);
+              transform: translate(4px, 0);
+            }
+            .resume__summary {
+              display: grid;
+              gap: 1rem;
+            }
+            .resume__role {
+              font-size: 1.5rem;
+              color: var(--first-color-alt);
+            }
+
+            .resume__timeline {
+              font-size: 1.2rem;
+              background-color: var(--body-color);
+              width: max-content;
+              padding: 0.5rem 1rem;
+            }
+
+            .resume__company {
+              font-size: 1.4rem;
+              font-weight: 600;
+            }
+
+            .resume__description {
+              font-size: 1.19rem;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.resume__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 3.5rem;
+  .button {
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: var(--first-color);
+    background-image: linear-gradient(to top left, var(--first-color), var(--text-color));
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: 0.4s ease-in-out;
+  }
+
+  .button:hover {
+    transform: translateY(4%);
+  }
+}
+
+// Media Queries
+
+@media screen and (min-width: 576px) {
+}
+@media screen and (min-width: 768px) {
+  .resume__container--contents {
+    flex-direction: row;
+    padding: 3.5rem 2rem;
+  }
+}
+@media screen and (min-width: 968px) {
+  .resume__container--contents {
+    padding: 3.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+}
